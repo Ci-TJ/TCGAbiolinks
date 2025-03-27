@@ -1134,7 +1134,8 @@ TCGAbatch_Correction <- function (
         adjustment = NULL,
         ClinicalDF = data.frame(),
         UnpublishedData = FALSE,
-        AnnotationDF = data.frame()
+        AnnotationDF = data.frame(),
+        is_plot = TRUE
 ){
     check_package("sva")
 
@@ -1157,7 +1158,7 @@ TCGAbatch_Correction <- function (
             batch = batch.factor,
             mod = mod,
             par.prior = TRUE,
-            prior.plots = TRUE
+            prior.plots = is_plot
         )
     }
 
@@ -1232,7 +1233,7 @@ TCGAbatch_Correction <- function (
             batch = batchCombat,
             mod = design.mod.combat,
             par.prior = TRUE,
-            prior.plots = TRUE
+            prior.plots = is_plot
         )
     }
 
